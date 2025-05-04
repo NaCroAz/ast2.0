@@ -1,0 +1,161 @@
+.dish {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 280px;
+  margin: 15px auto;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border 0.3s;
+  border: 3px solid #d9534f;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dish:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  background-color: #ffefe0;
+  filter: brightness(1.1);
+}
+
+.dish h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-family: 'Oswald', sans-serif;
+}
+
+.dish h3:hover {
+  color: #ff4500;
+}
+
+.dish p {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.dish .price {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #e64a19;
+}
+
+.add-to-cart-button {
+  cursor: pointer;
+  padding: 8px 14px;
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #c9302c;
+}
+
+.add-to-cart-button:active {
+  transform: scale(0.95);
+}
+
+/* --- Modo oscuro --- */
+.dark-mode {
+  background: linear-gradient(45deg, #121212, #1a1a1a);
+  color: #ffffff;
+}
+
+.dark-mode .dish {
+  background-color: #222;
+  border: 3px solid #e64a19;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+}
+
+.dark-mode .dish:hover {
+  background-color: #2a2a2a;
+}
+
+.dark-mode .dish h3 {
+  color: #ffccbc;
+}
+
+.dark-mode .dish h3:hover {
+  color: #ff5722;
+}
+
+.dark-mode .dish p {
+  color: #bbb;
+}
+
+.dark-mode .dish .price {
+  color: #ff8a65;
+}
+
+.dark-mode .add-to-cart-button {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.dark-mode .add-to-cart-button:hover {
+  background-color: #e64a19;
+}
+
+/* --- Estilos del interruptor de modo oscuro --- */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  margin-right: 12px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ff5722;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
